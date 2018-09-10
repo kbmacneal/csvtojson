@@ -5,6 +5,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using ChoETL;
+using System.Dynamic;
 
 namespace csvtojson
 {
@@ -12,14 +13,14 @@ namespace csvtojson
     {
         static void Main(string[] args)
         {
-            string csv_path = args[0].ToString();
+            string csv_path = "test.csv";
 
-            string filename = args[1].ToString();
+            string filename = "test";
 
             List<object> obj_array = new List<object>();
 
-            var reader = new ChoCSVReader(csv_path).WithFirstLineHeader();
-            dynamic rec;
+            var reader = new ChoCSVReader<object>(csv_path).WithFirstLineHeader();
+            object rec;
 
             while ((rec = reader.Read()) != null)
             {
