@@ -13,9 +13,9 @@ namespace csvtojson
     {
         static void Main(string[] args)
         {
-            string csv_path = "test.csv";
+            string csv_path = args[0].ToString();
 
-            string filename = "test";
+            string filename = args[1].ToString();
 
             List<object> obj_array = new List<object>();
 
@@ -27,7 +27,7 @@ namespace csvtojson
                 obj_array.Add(rec);
             }
 
-            System.IO.File.WriteAllText(filename + ".json", JsonConvert.SerializeObject(obj_array));
+            System.IO.File.WriteAllText(filename, JsonConvert.SerializeObject(obj_array));
         }
     }
 }
