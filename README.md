@@ -1,1 +1,1 @@
-# csvtojson
+A small utility I am using to convert datatables in csv files to JSON for use in swnbot. This will probably be of no use to anyone, but its open sourced if anyone needs it.
